@@ -1,11 +1,11 @@
-FROM debian:bullseye-slim
+FROM alpine:3.21
 
-RUN apt-get update
+RUN apk upgrade --no-cache --available \
+    && apk add --no-cache \
+      chromium-swiftshader \
+      ttf-freefont \
+      font-noto-emoji
 
-RUN apt install -y build-essential
-RUN apt install -y cmake
-RUN apt install -y gdb gdbserver
-RUN apt install -y vim
-RUN apt install -y git
+COPY local.conf /etc/fonts/local.conf
 
-RUN rm -rf /var/lib/apt/lists/*
+ENTRYPOINT ["chromium-browser", "--headless", "--no-sandbox"]
