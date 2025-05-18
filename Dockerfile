@@ -27,6 +27,8 @@ RUN \
 # add local files
 COPY /root /
 
+RUN chmod +x /usr/bin/wrapped-chromium
+
 # ports and volumes
 EXPOSE 3000
 
