@@ -2,6 +2,8 @@
 
 BIN=/opt/chromium/chrome
 
+
+
 # Cleanup
 if ! pgrep chromium > /dev/null;then
   rm -f $HOME/.config/chromium/Singleton*
@@ -12,7 +14,6 @@ if grep -q 'Seccomp:.0' /proc/1/status; then
   ${BIN} \
   --no-first-run \
   --no-default-browser-check \
-  --disable-infobars \
   --password-store=basic \
   --start-maximized \
    ${CHROME_ARGS} "$@" > /dev/null 2>&1
@@ -21,7 +22,6 @@ else
   --no-sandbox \
   --no-first-run \
   --no-default-browser-check \
-  --disable-infobars \
   --password-store=basic \
   --start-maximized \
    ${CHROME_ARGS} "$@" > /dev/null 2>&1

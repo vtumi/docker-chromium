@@ -3,6 +3,10 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 # title
 ENV TITLE=Chromium
 
+ENV GOOGLE_API_KEY=no
+ENV GOOGLE_DEFAULT_CLIENT_ID=no
+ENV GOOGLE_DEFAULT_CLIENT_SECRET=no
+
 RUN \
   echo "**** add icon ****" && \
   curl -o /kclient/public/favicon.ico https://www.chromium.org/favicon.ico && \
