@@ -8,7 +8,7 @@ RUN \
   curl -o /kclient/public/favicon.ico https://www.chromium.org/favicon.ico && \
   echo "**** install packages ****" && \
   apt-get update && \
-  apt-get install -y --no-install-recommends libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libgtk-3-0 libnss3 libxss1 libasound2t64 desktop-file-utils fonts-noto-cjk-extra && \
+  apt-get install -y --no-install-recommends libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libgtk-3-0 libnss3 libxss1 libasound2 desktop-file-utils fonts-noto-cjk-extra && \
   mkdir -p /opt/chromium && \
   CHROME_VERSION=$(curl -s https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/LAST_CHANGE) && \
   curl -fSL "https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/${CHROME_VERSION}/chrome-linux.zip" -o /tmp/chrome.zip && \
