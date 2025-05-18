@@ -7,4 +7,19 @@ if ! pgrep chromium > /dev/null;then
   rm -f $HOME/.config/chromium/Singleton*
 fi
 
-${BIN} --no-first-run --password-store=basic --start-maximized ${CHROME_ARGS} "$@" > /dev/null 2>&1
+# Run normally on privved containers or modified un non priv
+if grep -q 'Seccomp:.0' /proc/1/status; then
+  ${BIN} \
+  --no-first-run \
+  --password-store=basic \
+  --start-maximized \
+   ${CHROME_ARGS} "$@" > /dev/null 2>&1
+else
+  ${BIN} \
+  --no-first-run \
+  --no-sandbox \
+  --password-store=basic \
+  --start-maximized \
+  --test-type \
+   ${CHROME_ARGS} "$@" > /dev/null 2>&1
+fi
