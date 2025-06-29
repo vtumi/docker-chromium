@@ -15,7 +15,7 @@ RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends unzip libgtk-3-0 libnss3 libasound2 desktop-file-utils fonts-noto-cjk-extra && \
   mkdir -p /opt/chromium && \
-  curl -fSL "https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/${CHROME_VERSION}/chrome-linux.zip" -o /tmp/chrome.zip && \
+  curl -fSL "https://github.com/vtumi/docker-chromium/releases/download/v1.0.0/chrome-linux.zip" -o /tmp/chrome.zip && \
   unzip /tmp/chrome.zip -d /tmp && \
   mv /tmp/chrome-linux/* /opt/chromium/ && \
   fc-cache -fv && \
