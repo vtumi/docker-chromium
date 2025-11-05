@@ -31,6 +31,8 @@ RUN \
 # add local files
 COPY /root /
 
+RUN chmod +x /opt/chromium/chrome
+RUN chmod +x /opt/chromium/chrome_crashpad_handler
 RUN chmod +x /usr/bin/wrapped-chromium
 
 # ports and volumes
