@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbullseye-8446af38-ls104
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 
 # title
 ENV TITLE=Chromium
