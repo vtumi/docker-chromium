@@ -18,7 +18,7 @@ if grep -q 'Seccomp:.0' /proc/1/status; then
   --no-default-browser-check \
   --password-store=basic \
   --start-maximized \
-   ${CHROME_ARGS} "$@" > /dev/null 2>&1
+  ${CHROME_ARGS} "$@" > /dev/null 2>&1
 else
   ${BIN} \
   --no-sandbox \
@@ -26,5 +26,5 @@ else
   --no-default-browser-check \
   --password-store=basic \
   --start-maximized \
-   ${CHROME_ARGS} "$@" > /dev/null 2>&1
+  ${CHROME_ARGS} "$@" > /dev/null 2>&1
 fi
