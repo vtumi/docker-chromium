@@ -2,6 +2,10 @@
 
 BIN=/opt/chromium/chrome
 
+if [[ -n "$PUID" && -n "$PGID" ]]; then
+    sudo chown -R $PUID:$PGID /opt/chromium
+fi
+
 # Cleanup
 if ! pgrep chromium > /dev/null;then
   rm -f $HOME/.config/chromium/Singleton*
