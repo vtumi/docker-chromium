@@ -10,7 +10,7 @@ ENV GOOGLE_DEFAULT_CLIENT_SECRET=no
 RUN \
   echo "**** install packages ****" && \
   apt-get update && \
-  apt-get install -y --no-install-recommends libgtk-3-0 libnss3 libasound2 desktop-file-utils fonts-noto-cjk-extra && \
+  apt-get install -y --no-install-recommends libgtk-3-0 libnss3 libasound2t64 desktop-file-utils fonts-noto-cjk-extra && \
   mkdir -p /opt/chromium && \
   curl -L -o /tmp/chromium.tar.gz "https://github.com/vtumi/docker-chromium/releases/download/v1.0.0/chromium-linux.tar.gz" && \
   tar zxvf /tmp/chromium.tar.gz -C /tmp && \
