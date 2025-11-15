@@ -2,8 +2,6 @@
 
 BIN=/opt/chromium/chrome
 
-
-
 # Cleanup
 if ! pgrep chromium > /dev/null;then
   rm -f $HOME/.config/chromium/Singleton*
