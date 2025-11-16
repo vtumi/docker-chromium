@@ -1,10 +1,6 @@
 #!/bin/bash
 
-BIN=/opt/chromium/chrome
-
-if [[ -n "$PUID" && -n "$PGID" ]]; then
-    sudo chown -R $PUID:$PGID /opt/chromium
-fi
+BIN=/opt/chromium/chromium
 
 # Cleanup
 if ! pgrep chromium > /dev/null;then
@@ -16,6 +12,7 @@ if grep -q 'Seccomp:.0' /proc/1/status; then
   ${BIN} \
   --no-first-run \
   --no-default-browser-check \
+  --disable-infobars \
   --password-store=basic \
   --start-maximized \
   ${CHROME_ARGS} "$@" > /dev/null 2>&1
@@ -24,6 +21,7 @@ else
   --no-sandbox \
   --no-first-run \
   --no-default-browser-check \
+  --disable-infobars \
   --password-store=basic \
   --start-maximized \
   ${CHROME_ARGS} "$@" > /dev/null 2>&1

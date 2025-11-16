@@ -15,7 +15,7 @@ RUN \
   curl -L -o /tmp/chromium.tar.gz "https://github.com/vtumi/docker-chromium/releases/download/v1.0.0/chromium-linux.tar.gz" && \
   tar zxvf /tmp/chromium.tar.gz -C /tmp && \
   mv /tmp/chromium/* /opt/chromium/ && \
-  cp /opt/chromium/product_logo_48.png /usr/share/selkies/www/icon.png && \
+  cp /opt/chromium/product_logo_32.png /usr/share/selkies/www/icon.png && \
   fc-cache -fv && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
