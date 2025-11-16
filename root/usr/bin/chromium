@@ -3,7 +3,7 @@
 BIN=/opt/chromium/chromium
 
 # Cleanup
-if ! pgrep chromium > /dev/null;then
+if ! pgrep -f ${BIN} > /dev/null;then
   rm -f $HOME/.config/chromium/Singleton*
 fi
 
