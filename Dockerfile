@@ -1,5 +1,7 @@
 FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
 
+ARG TARGETARCH
+
 # title
 ENV TITLE=Chromium
 
@@ -12,7 +14,7 @@ RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends libgtk-3-0 libnss3 libasound2t64 desktop-file-utils fonts-noto-cjk-extra && \
   mkdir -p /opt/chromium && \
-  curl -L -o /tmp/chromium.tar.gz "https://github.com/vtumi/docker-chromium/releases/download/v1.0.0/chromium-linux.tar.gz" && \
+  curl -L -o /tmp/chromium.tar.gz "https://github.com/vtumi/docker-chromium/releases/download/v1.0.0/chromium-linux-${TARGETARCH}.tar.gz" && \
   tar zxvf /tmp/chromium.tar.gz -C /tmp && \
   mv /tmp/chromium/* /opt/chromium/ && \
   cp /opt/chromium/product_logo_32.png /usr/share/selkies/www/icon.png && \
